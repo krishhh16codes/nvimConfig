@@ -39,3 +39,4 @@ vim.cmd[[colorscheme tokyonight-night]]
 require('mason-config')
 require('mason-lspconfig')
 require('keybindings')
+require('whichkey-config')
