@@ -42,15 +42,20 @@ packer.init({
 return packer.startup(function(use)
 	use ("wbthomason/packer.nvim") -- Have packer manage itself	
 	use 'preservim/nerdtree' -- NerdTree
-	use 'vim-airline/vim-airline' -- Status bar
 	use 'rafi/awesome-vim-colorschemes' -- Retro Scheme
 	use 'ryanoasis/vim-devicons' -- Developer Icons
 	use 'tc50cal/vim-terminal' -- Vim Terminal
 	use 'preservim/tagbar' -- Tagbar for code navigation
 	use 'terryma/vim-multiple-cursors' -- CTRL + N for multiple cursors
 	use 'folke/tokyonight.nvim' -- TokyoNight ColorScheme
+	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 	use {
-		'nvim-treesitter/nvim-treesitter',
+		'nvim-lualine/lualine.nvim', --Status Bar for nvim
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
+
+	use {
+		'nvim-treesitter/nvim-treesitter', --Global Syntax Highlighting
 		run = function()
 			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 			ts_update()
@@ -69,7 +74,7 @@ return packer.startup(function(use)
 		"neovim/nvim-lspconfig",
 	}
 	use {
-		"folke/which-key.nvim",
+		"folke/which-key.nvim", --KeyMap Display
 		config = function()
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
