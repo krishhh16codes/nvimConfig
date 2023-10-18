@@ -48,6 +48,13 @@ return packer.startup(function(use)
 	use 'preservim/tagbar' -- Tagbar for code navigation
 	use 'terryma/vim-multiple-cursors' -- CTRL + N for multiple cursors
 	use 'folke/tokyonight.nvim' -- TokyoNight ColorScheme
+	use {
+		'goolord/alpha-nvim',
+		config = function ()
+			require'alpha'.setup(require'alpha.themes.dashboard'.config)
+		end
+	}
+
 	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 	use {
 		'nvim-lualine/lualine.nvim', --Status Bar for nvim
