@@ -50,6 +50,14 @@ return packer.startup(function(use)
 	use 'terryma/vim-multiple-cursors' -- CTRL + N for multiple cursors
 	use 'folke/tokyonight.nvim' -- TokyoNight ColorScheme
 	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
+	}
+
+	use {
 		'nvim-tree/nvim-tree.lua', --nvim folder manager
 		requires = {
 			'nvim-tree/nvim-web-devicons',
