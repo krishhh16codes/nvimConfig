@@ -1,7 +1,5 @@
 require("plugins")
 
-
-
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -44,3 +42,5 @@ require('whichkey-config')
 require('treesitter-config')
 require('lualine-config')
 require('bufferline-config')
+require('nvim-cmp')
+require("ibl").setup()

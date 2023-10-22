@@ -47,7 +47,20 @@ return packer.startup(function(use)
 	use 'tc50cal/vim-terminal' -- Vim Terminal
 	use 'preservim/tagbar' -- Tagbar for code navigation
 	use 'terryma/vim-multiple-cursors' -- CTRL + N for multiple cursors
-	use 'folke/tokyonight.nvim' -- TokyoNight ColorScheme
+	use 'folke/tokyonight.nvim'
+	use "lukas-reineke/indent-blankline.nvim"
+	use {
+		"windwp/nvim-autopairs",
+		config = function() require("nvim-autopairs").setup {} end
+	}
+	use 'hrsh7th/cmp-nvim-lsp'
+	use("hrsh7th/nvim-cmp") -- completion plugin
+	use("hrsh7th/cmp-buffer") -- source for text in buffer
+	use("hrsh7th/cmp-path") -- source for file system paths-- snippets
+	use("L3MON4D3/LuaSnip") -- snippet engine
+	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
+	use 'hrsh7th/cmp-nvim-lsp-signature-help'
+	use("rafamadriz/friendly-snippets") -- useful snippetsuse 'folke/tokyonight.nvim' -- TokyoNight ColorScheme
 	use {
 		'goolord/alpha-nvim',
 		config = function ()
