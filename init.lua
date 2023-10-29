@@ -4,11 +4,14 @@ require("plugins")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
+
 -- empty setup using defaults
 require("nvim-tree").setup()
+
 
 -- OR setup with some options
 require("nvim-tree").setup({
@@ -28,12 +31,9 @@ require("nvim-tree").setup({
 -- Set general Vim settings
 vim.cmd([[
   set number relativenumber autoindent
-  set tabstop=4 shiftwidth=4 softtabstop=4 mouse=a
+  set tabstop=2 shiftwidth=2 softtabstop=2 mouse=a
 ]])
 
-
-
-vim.cmd[[colorscheme tokyonight-night]]
 
 require('mason-config')
 require('mason-lspconfig')
@@ -43,4 +43,17 @@ require('treesitter-config')
 require('lualine-config')
 require('bufferline-config')
 require('nvim-cmp')
+require('tokyonight-config')
 require("ibl").setup()
+vim.cmd[[colorscheme tokyonight-night]]
+vim.g.python_recommended_style = 0
+
+vim.cmd([[
+  augroup python
+    " ftype/python.vim overwrites this
+    autocmd!
+    autocmd FileType python setlocal ts=2 sts=2 sw=2 noexpandtab
+  augroup END
+]])
+
+vim.cmd("autocmd FileType python setlocal tabstop=2")
