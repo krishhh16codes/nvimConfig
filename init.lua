@@ -44,6 +44,7 @@ require('lualine-config')
 require('bufferline-config')
 require('nvim-cmp')
 require('tokyonight-config')
+require('liveServer')
 require("ibl").setup()
 vim.cmd[[colorscheme tokyonight-night]]
 vim.g.python_recommended_style = 0

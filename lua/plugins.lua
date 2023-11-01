@@ -60,7 +60,15 @@ return packer.startup(function(use)
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
 	use 'hrsh7th/cmp-nvim-lsp-signature-help'
-	use("rafamadriz/friendly-snippets") -- useful snippetsuse 'folke/tokyonight.nvim' -- TokyoNight ColorScheme
+	use("rafamadriz/friendly-snippets") -- useful snippetsuse 'folke/tokyonight.nvim' -- TokyoNight ColorScheme  
+	use({
+		"aurum77/live-server.nvim",
+		run = function()
+			require"live_server.util".install()
+		end,
+		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+	})
+
 	use {
 		'goolord/alpha-nvim',
 		config = function ()
